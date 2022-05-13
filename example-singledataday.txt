@@ -1,0 +1,6 @@
+ZP -> 1h;
+scan-papers -> 15';
+theological-formation -> 1h;
+job-search -> 1h + 30' + 30';
+real-state-investment -> 1h;
+software-proyect-ideasrooms -> 1h + 0,5h + 1h;

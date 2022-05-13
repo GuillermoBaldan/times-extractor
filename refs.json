@@ -1,0 +1,26 @@
+[
+  {
+    "name": "ZP",
+    "description": "Dedicated time to program ZeroPlayers project"
+  },
+  {
+    "name": "scan-papers",
+    "description": "Dedicated time to scan papers"
+  },
+  {
+    "name": "theological-formation",
+    "description": "Dedicated time to study theology"
+  },
+  {
+    "name": "job-search",
+    "description": "Dedicated time to search for a job"
+  },
+  {
+    "name": "real-state-investment",
+    "description": "Dedicated time to invest in real state"
+  },
+  {
+    "name": "software-proyect-ideasrooms",
+    "description": "Dedicated time to create software project call IdeasRooms"
+  }
+]

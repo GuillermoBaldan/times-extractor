@@ -1,0 +1,14 @@
+{
+  "name": "time-extractor",
+  "version": "1.0.0",
+  "description": "personal script for my coach software",
+  "main": "time-extractor.v1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guillermo Baldán López",
+  "license": "SEE LICENCE IN <LICENSE>",
+  "dependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
