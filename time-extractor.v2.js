@@ -25,6 +25,71 @@ function extractDays(file) {
   return aux;
 }
 
+function extractBlocks(file) {
+  let aux = [];
+  //input: "-12/05/2022-\nZP -> 1h;\nscan-papers -> 15';\n-13/05/2022-\njob-search -> 1h;\npersonal-planning -> 30'" output: ["ZP -> 1h;\nscan-papers -> 15'","job-search -> 1h;\npersonal-planning -> 30'"];
+  pattern =
+    /(([a-zíA-Z]+-?)+(\s|\n)*(->\s)*([0-9]+,?[0-9]*(h|');?\s?\+?\s?)*)+/g;
+  aux = file.match(pattern);
+  return aux;
+}
+
+function createObject(file) {
+  let dates = [];
+  let blocks = [];
+  let objectArray1 = [];
+  let objectArray2 = [];
+  dates = extractDays(file);
+  blocks = extractBlocks(file);
+  for (let i = 0; i < dates.length; i++) {
+    objectArray1[i] = {};
+    objectArray1[i].date = dates[i];
+    objectArray1[i].block = blocks[i];
+  }
+  console.log("--------------Fase 2--------------");
+  console.log(objectArray1);
+  //Extraemos los términos
+  console.log("------------Extraemos las tareas------------");
+  let tasks = extractTasks(objectArray1[0].block);
+  console.log(tasks);
+  let times = extractTimesv2(objectArray1[0].block);
+  console.log("------------Extraemos los tiempos------------");
+  console.log(times);
+
+  objectArray1.forEach((element) => {
+    objectArray2.push(
+      jsonGenerator(extractTasks(element.block), extractTimesv2(element.block))
+    );
+  });
+  //Metemos las fechas
+  for (i = 0; i < objectArray2.length; i++) {
+    for (let j = 0; j < objectArray2[i].length; j++) {
+      objectArray2[i][j].date = objectArray1[i].date;
+    }
+  }
+  //Hacemos un array de objetos general
+  let generalArray = [];
+  for (i = 0; i < objectArray2.length; i++) {
+    for (let j = 0; j < objectArray2[i].length; j++) {
+      generalArray.push(objectArray2[i][j]);
+    }
+  }
+
+  return generalArray;
+}
+
+function extractTasks(string) {
+  let tasks = [];
+  let pattern = /([a-zA-Z]+-?)+\s->/g;
+  tasks = string.match(pattern);
+  //Retiramos '->'
+  tasks = tasks.map((element) => {
+    return element.replace(" ->", "");
+  });
+
+  return tasks;
+}
+
 function extractTerms(array) {
   let terms = [];
   //write the pattern for the next test input: " word1-word2 -> 1h" output: "word1-word2"
@@ -32,6 +97,7 @@ function extractTerms(array) {
   array.forEach((element) => {
     terms.push(element.match(pattern));
   });
+
   //Erase null items
   terms = terms.filter((element) => {
     return element !== null;
@@ -50,6 +116,23 @@ function extractTerms(array) {
   return terms;
 }
 
+function extractTimesv2(string) {
+  let times = [];
+  let pattern = /([0-9]+,?[0-9]*[h|']\s?\+?\s?)+;/g;
+  times = string.match(pattern);
+  //Calculamos los timpos en minutos
+  //retiramos ';'
+  times = times.map((element) => {
+    return element.replace(";", "");
+  });
+  console.log("--------------Mostramos tiempos--------------");
+  console.log(times);
+  times = calculateTimev2(times);
+  console.log(times);
+
+  return times;
+}
+
 function extractTimes(array) {
   let times = [];
   //write the pattern for the next test input: " software-proyect-ideasrooms -> 1h + 0,5h + 1h" output: "1h + 0,5h + 1h"
@@ -63,6 +146,39 @@ function extractTimes(array) {
   });
 
   return times;
+}
+
+function calculateTimev2(array) {
+  let auxArray1 = [];
+  let auxArray2 = [];
+  let pattern = /([0-9]+,?[0-9]*[h|'])/g;
+  for (let i = 0; i < array.length; i++) {
+    auxArray1[i] = array[i].toString().match(pattern);
+  }
+  //phase 1: convert to minutes
+  for (i = 0; i < auxArray1.length; i++) {
+    for (let j = 0; j < auxArray1[i].length; j++) {
+      auxArray1[i][j] = auxArray1[i][j].replace(",", ".");
+      if (auxArray1[i][j].includes("h")) {
+        auxArray1[i][j] = auxArray1[i][j].replace("h", "");
+        auxArray1[i][j] = parseFloat(auxArray1[i][j]) * 60;
+      } else if (auxArray1[i][j].includes("'")) {
+        auxArray1[i][j] = auxArray1[i][j].replace("'", "");
+        auxArray1[i][j] = parseFloat(auxArray1[i][j]);
+      }
+    }
+  }
+  //phase 2: sum
+  let sum = 0;
+  for (i = 0; i < auxArray1.length; i++) {
+    for (let j = 0; j < auxArray1[i].length; j++) {
+      sum += parseFloat(auxArray1[i][j]);
+    }
+    auxArray2[i] = sum;
+    sum = 0;
+  }
+
+  return auxArray2;
 }
 
 function calculateTime(array) {
@@ -111,4 +227,26 @@ console.log(
   jsonGenerator(extractTerms(file), calculateTime(extractTimes(file)))
 ); */
 //console.log(extractDays(file));
-console.log(file);
+//load the config.json file
+let config = require("./config/config.json");
+config.iterationNumber++;
+console.log("---------------------------------------------------------");
+console.log(`Iteration number: ${config.iterationNumber}`);
+
+//Main program
+//console.log(extractDays(file));
+//console.log(file);
+console.log(extractBlocks(file).length);
+extractBlocks(file).forEach((element) => {
+  console.log("--------------");
+  console.log(element);
+});
+
+console.log(createObject(file));
+
+//We save the config.json file
+fs.writeFileSync(
+  path.join(__dirname, "config/config.json"),
+  JSON.stringify(config, null, 2),
+  "utf8"
+);
