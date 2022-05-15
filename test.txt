@@ -1,0 +1,7 @@
+Erase una vez
+un ingeniero de software
+que queria todo en este bloque de texto
+en una sola entrada
+-
+Y este otro bloque de texto separado por un guion
+lo quería como un segundo item de su array
