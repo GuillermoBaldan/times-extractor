@@ -110,4 +110,5 @@ console.log(calculateTime(extractTimes(file)));
 console.log(
   jsonGenerator(extractTerms(file), calculateTime(extractTimes(file)))
 ); */
-console.log(extractDays(file));
+//console.log(extractDays(file));
+console.log(file);
