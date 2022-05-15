@@ -1,8 +1,8 @@
-//1º Cargamos datos
+////1º Cargamos datos
 //open a txt file called example-singledataday using fs node library
 const fs = require("fs");
 const path = require("path");
-const filePath = path.join(__dirname, "example-singledataday.txt");
+const filePath = path.join(__dirname, "dataExample.v2.txt");
 let file = fs.readFileSync(filePath, "utf8");
 
 //Load refs data into a constant
@@ -10,6 +10,20 @@ const refs = require("./refs.json");
 
 let array = [];
 //1º
+
+function extractDays(file) {
+  let aux = [];
+  let blocks;
+  //input: "-12/05/2022-\nZP -> 1h;\nscan-papers -> 15';" output: ["-12/05/2022-"];
+  pattern = /-\d{2}\/\d{2}\/\d{4}-/g;
+  aux = file.match(pattern);
+  for (let i = 0; i < aux.length; i++) {
+    aux[i] = aux[i].replace("-", "");
+    aux[i] = aux[i].replace("-", "");
+  }
+
+  return aux;
+}
 
 function extractTerms(array) {
   let terms = [];
@@ -88,11 +102,12 @@ function jsonGenerator(terms, times) {
 }
 
 //using regex to extract the word of the next expression: "ZP -> 1h;" ouput: "ZP"
-file = file.split(";");
+/* file = file.split(";");
 console.log("---------------------------------------------------------");
 console.log(extractTerms(file));
 console.log(extractTimes(file));
 console.log(calculateTime(extractTimes(file)));
 console.log(
   jsonGenerator(extractTerms(file), calculateTime(extractTimes(file)))
-);
+); */
+console.log(extractDays(file));
