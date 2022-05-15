@@ -1,0 +1,29 @@
+-12/05/2022-
+ZP -> 1h;
+scan-papers -> 15';
+theological-formation -> 1h;
+job-search -> 1h + 30' + 30';
+real-state-investment -> 1h;
+software-proyect-ideasrooms -> 1h + 0,5h + 1h;
+-13/05/2022-
+theological-formation -> 1h + 45';
+software-proyect-time-extractor -> 1,5h;
+personal-planning -> 1,5h;
+scan-papers -> 15';
+job-search -> 1h;
+-14/05/2022-
+verse-memorization -> 15';
+theological-formation -> 1h + 25';
+scan-papers -> 15';
+job-search -> 30';
+platzi:curso-fundamentos-Angular -> 10'+15'+ 15'+15'+30'+30'+15'+15'+15'+15'+15'+15';
+ZP -> 1h;
+software-proyect:ideasrooms -> 1h + 1h + 45';
+technical-prayer -> 20';
+-15/05/2022-
+verse-memorization -> 15';
+theological-formation -> 1h;
+-16/05/2022-
+scan-papers -> 15';
+job-search -> 1h;
+software-proyect:times-extractor -> 1h + 1h + 1h + 1h + 0,5h;

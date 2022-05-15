@@ -5,7 +5,7 @@
   "main": "time-extractor.v1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon time-extractor.v1.js"
+    "dev": "nodemon time-extractor.v3.js --ignore \"config/config.json\""
   },
   "author": "Guillermo Baldán López",
   "license": "SEE LICENCE IN <LICENSE>",

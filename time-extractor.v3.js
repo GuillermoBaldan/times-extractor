@@ -2,7 +2,7 @@
 //open a txt file called example-singledataday using fs node library
 const fs = require("fs");
 const path = require("path");
-const filePath = path.join(__dirname, "dataExample.v2.txt");
+const filePath = path.join(__dirname, "dataExample.v3.txt");
 let file = fs.readFileSync(filePath, "utf8");
 
 //Load refs data into a constant
@@ -29,7 +29,7 @@ function extractBlocks(file) {
   let aux = [];
   //input: "-12/05/2022-\nZP -> 1h;\nscan-papers -> 15';\n-13/05/2022-\njob-search -> 1h;\npersonal-planning -> 30'" output: ["ZP -> 1h;\nscan-papers -> 15'","job-search -> 1h;\npersonal-planning -> 30'"];
   pattern =
-    /(([a-zíA-Z]+-?)+(\s|\n)*(->\s)*([0-9]+,?[0-9]*(h|');?\s?\+?\s?)*)+/g;
+    /(([a-zíA-Z]+-?:?)+(\s|\n)*(->\s)*([0-9]+,?[0-9]*(h|');?\s?\+?\s?)*)+/g;
   aux = file.match(pattern);
   return aux;
 }
@@ -49,12 +49,12 @@ function createObject(file) {
   console.log("--------------Fase 2--------------");
   console.log(objectArray1);
   //Extraemos los términos
-  console.log("------------Extraemos las tareas------------");
-  let tasks = extractTasks(objectArray1[0].block);
-  console.log(tasks);
-  let times = extractTimesv2(objectArray1[0].block);
-  console.log("------------Extraemos los tiempos------------");
-  console.log(times);
+  console.log("------------Mostramos las tareas------------");
+  objectArray1.forEach((element) => {
+    console.log(element.block);
+  });
+
+  console.log("------------Mostramos los tiempos------------");
 
   objectArray1.forEach((element) => {
     objectArray2.push(
@@ -125,10 +125,8 @@ function extractTimesv2(string) {
   times = times.map((element) => {
     return element.replace(";", "");
   });
-  console.log("--------------Mostramos tiempos--------------");
-  console.log(times);
+
   times = calculateTimev2(times);
-  console.log(times);
 
   return times;
 }
@@ -234,14 +232,6 @@ console.log("---------------------------------------------------------");
 console.log(`Iteration number: ${config.iterationNumber}`);
 
 //Main program
-//console.log(extractDays(file));
-//console.log(file);
-console.log(extractBlocks(file).length);
-extractBlocks(file).forEach((element) => {
-  console.log("--------------");
-  console.log(element);
-});
-
 console.log(createObject(file));
 
 //We save the config.json file
