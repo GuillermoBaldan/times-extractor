@@ -103,7 +103,6 @@ function isOnObject(string,array){
   let flag = false;
   array.forEach( item => {
       for (let key in item ) {
-        console.log(`${item[key]} - string: ${string}`)
           if (item[key] === string) {
             
             flag = true;
