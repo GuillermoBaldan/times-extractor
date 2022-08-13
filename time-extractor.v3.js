@@ -113,7 +113,6 @@ function isOnObject(string,array){
 }
 
 function insertDataByTerm(item, array){
-  console.log("Dentro de la función insertData")
   array.forEach(element =>{
     if(item.term === element.term){
       element.data.push({count: item.time, date: item.date})
@@ -263,7 +262,13 @@ async function main(){
   console.log("Mostramos el objeto de datos")
   await console.log(createObject(file));
   console.log("Ahora Mostramos el objeto general de datos que será transformoado en un JSON")
-  console.log(JSON.stringify(await orderObject(file)));
+  const object = await orderObject(file)
+  console.log(JSON.stringify(object));
+  save(object)
+}
+
+function save(object){
+  fs.writeFileSync('./data.json', JSON.stringify(object, null, 2) , 'utf-8');
 }
 
 
