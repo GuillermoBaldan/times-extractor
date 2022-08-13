@@ -46,15 +46,15 @@ function createObject(file) {
     objectArray1[i].date = dates[i];
     objectArray1[i].block = blocks[i];
   }
-  console.log("--------------Fase 2--------------");
+  /* console.log("--------------Fase 2--------------");
   console.log(objectArray1);
   //Extraemos los términos
   console.log("------------Mostramos las tareas------------");
   objectArray1.forEach((element) => {
     console.log(element.block);
-  });
+  }); */
 
-  console.log("------------Mostramos los tiempos------------");
+ // console.log("------------Mostramos los tiempos------------");
 
   objectArray1.forEach((element) => {
     objectArray2.push(
@@ -76,6 +76,49 @@ function createObject(file) {
   }
 
   return generalArray;
+}
+
+
+async function orderObject(file){
+
+    try {
+    let generalArray = await createObject(file);
+    let auxArray = [];
+    generalArray.forEach( item => {
+    if (isOnObject(item.term, auxArray)) {
+      auxArray = insertDataByTerm(item,auxArray)
+    }else{
+      auxArray.push({ term: item.term, data: [{ count: item.time, date: item.date}]})
+    }
+
+    })
+    return auxArray;
+    } catch(err){
+    console.log(err)
+     }
+    
+}
+
+function isOnObject(string,array){
+  let flag = false;
+  array.forEach( item => {
+      for (let key in item ) {
+          if (item[key] === string) {
+            
+            flag = true;
+          }
+      }
+    })
+    return flag;
+}
+
+function insertDataByTerm(item, array){
+  array.forEach(element =>{
+    if(item.term === element.term){
+      element.data.push({count: item.time, date: item.date})
+    }
+  })
+  return array;
 }
 
 function extractTasks(string) {
@@ -215,24 +258,28 @@ function jsonGenerator(terms, times) {
   return aux;
 }
 
-//using regex to extract the word of the next expression: "ZP -> 1h;" ouput: "ZP"
-/* file = file.split(";");
-console.log("---------------------------------------------------------");
-console.log(extractTerms(file));
-console.log(extractTimes(file));
-console.log(calculateTime(extractTimes(file)));
-console.log(
-  jsonGenerator(extractTerms(file), calculateTime(extractTimes(file)))
-); */
-//console.log(extractDays(file));
-//load the config.json file
+async function main(){
+  console.log("Mostramos el objeto de datos")
+  await console.log(createObject(file));
+  console.log("Ahora Mostramos el objeto general de datos que será transformoado en un JSON")
+  const object = await orderObject(file)
+  console.log(JSON.stringify(object));
+  save(object)
+}
+
+function save(object){
+  fs.writeFileSync('./data.json', JSON.stringify(object, null, 2) , 'utf-8');
+}
+
+
 let config = require("./config/config.json");
+const { create } = require("domain");
 config.iterationNumber++;
 console.log("---------------------------------------------------------");
 console.log(`Iteration number: ${config.iterationNumber}`);
 
 //Main program
-console.log(createObject(file));
+main();
 
 //We save the config.json file
 fs.writeFileSync(

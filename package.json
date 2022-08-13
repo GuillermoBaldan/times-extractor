@@ -2,10 +2,13 @@
   "name": "time-extractor",
   "version": "1.0.0",
   "description": "personal script for my coach software",
+  "nodemonConfig": {
+    "ignore": ["config/*.json", "./data.json"]
+  },
   "main": "time-extractor.v1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon time-extractor.v3.js --ignore \"config/config.json\""
+    "dev": "nodemon time-extractor.v3.js"
   },
   "author": "Guillermo Baldán López",
   "license": "SEE LICENCE IN <LICENSE>",
