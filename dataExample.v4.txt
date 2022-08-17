@@ -1,0 +1,241 @@
+-12/05/2022-
+ZP -> 1h;
+scan-papers -> 15';
+theological-formation -> 1h;
+job-search -> 1h + 30' + 30';
+real-state-investment -> 1h;
+software-proyect-ideasrooms -> 1h + 0,5h + 1h;
+-13/05/2022-
+theological-formation -> 1h + 45';
+time-extractor-> 1,5h;
+personal-planning -> 1,5h;
+scan-papers -> 15';
+job-search -> 1h;
+-14/05/2022-
+verse-memorization -> 15';
+theological-formation ->1h + 25';
+scan-papers -> 15';
+job-search -> 30';
+curso-fundamentos-Angular ->10'+15'+ 15'+15'+30'+30'+15'+15'+15'+15'+15'+15';
+ZP -> 1h;
+software-proyect:ideasrooms -> 1h + 1h + 45';
+techincal-prayer -> 20';
+-15/05/2022-
+verse-memorization -> 15';
+theological-formation -> 1h;
+-16/05/2022-
+scan-papers -> 15';
+job-search -> 1h;
+times-extractor -> 1h + 1h + 1h + 1h + 0,5h + 1h;
+curso-fundamentos-Angular -> 15'+ 15'+ 1h + 1h + 1h + 1h + 20';
+curso-30min-react -> 40';
+theological-formation -> 10' + 45' + 50';
+-17/05/2022-
+stay-with-mum -> 1,25h + 70';
+coachware -> 20';
+technical-issues -> 30';
+theological-formation -> 1,5h + 20' + 8';
+personal-planning -> 30' + 70';
+GAMA -> 1h;
+unitedtweets -> 1h + 1h;
+-18/05/2022-
+ZP -> 1h;
+verse-memorization -> 15';
+scan-papers -> 15';
+theological-formation -> 2h +30';
+GAMA -> 30';
+unitedtweets -> 1h +30'+ 1h + 1h + 1h + 30' + 30';
+-19/05/2022-
+unitedtweets -> 30'+ 38' + 49'+ 11'+ 28';
+stay-with-moi -> 1,5h + 10';
+church-factory -> 30' + 1h + 17';
+GAMA -> 2,5h;
+fullstackhero -> 3,5h;
+-20/05/2022-
+social-friends -> 2h;
+church-factory -> 22';
+stay-with-mum -> 1h;
+stay-with-moi -> 30';
+theological-formation -> 1h;
+ZP -> 0,5h;
+-21/05/2022-
+ZP -> 1h + 15';
+theological-formation -> 3h;
+pray-for-my-wife -> 20';
+Platzi -> 1h;
+-22/05/2022-udem
+Platzi -> 2h + 1h;
+ZP -> 10';
+unitedtweets -> 30';
+personal-planning -> 1h;
+-23/05/2022-
+GAMA -> 2h + 30';
+ZP -> 1h;
+theological-formation -> 15';
+-24/05/2022-
+ZP -> 1h + 30';
+FullstackHero -> 1h + 1h + 40' + 1,5h;
+GAMA -> 20' + 36';
+stay-with-mun -> 1,25h; 
+tidy-up-my-room -> 15';
+-26/05/2022-
+theological-formation -> 3h;
+autocoaching -> 15';
+running -> 1h;
+stay-with-mum -> 1,5h;
+-27/05/2022-
+ZP -> 1,5h + 1,5h +25';
+unitedtweets -> 1h;
+-28/05/2022-
+social-coding-Dorina -> 2,5h;
+unitedtweets -> 45';
+-30/05/2022-
+ZP -> 4h;
+theological-formation -> 15';
+-01/06/2022-
+theological-formation -> 20';
+ZP-technical-prayer -> 10';
+ZP -> 1h;
+-02/06/2022-
+theological-formation -> 40';
+church-factory -> 2h + 15';
+ZP -> 3h;
+-04/06/2022-
+udemy-course-rxjs-nivel-pro -> 1h;
+scan-papers: 2h;
+-06/06/2022-
+ZP-> 2h;
+-07/06/2022-
+ZP -> 2h + 10';
+-08/06/2022-
+udemy-course-rxjs-nivel-pro -> 2h;
+theological-formation -> 45';
+-09/06/2022-
+theological-formation -> 15';
+udemy-course-rxjs-nivel-pro -> 1h;
+-10/06/2022-
+ZP -> 0,5h + 1h; + 40';
+-12/06/2022-
+udemy-course-rxjs-nivel-pro -> 15';
+-13/06/2022-
+ZP -> 2h;
+udemy-course-rxjs-nivel-pro -> 1h + 40' + 1,5h;
+GAMA -> 1h;
+-14/06/2022-
+udemy-course-rxjs-nivel-pro -> 1h;
+-15/06/2022-
+udemy-course-rxjs-nivel-pro -> 1h + 1h + 1h;
+ZP -> 1h + 1,5h;
+ZP-technical-prayer -> 15';
+-22/06/2022-
+udemy-course-rxjs-nivel-pro -> 2h;
+theological-formation -> 1,5h;
+ZP -> 1,5h;
+-23/06/2022-
+ZP -> 2h;
+english -> 1,5h;
+-25/06/2022-
+udemy-course-react-zero-a-experto -> 1h;
+ZP -> 1h;
+-27/06/2022-
+udemy-course-react-zero-a-experto -> 1h + 3h;
+ZP -> 0,5h;
+-28/06/2022-
+ZP -> 45'+ 3h;
+theological-formation -> 1h;
+udemy-course-react-zero-a-experto -> 15' + 1h;
+-29/06/2022-
+theological-formation -> 15';
+udemy-course-react-zero-a-experto -> 2h + 1h + 1h;
+ZP -> 1h + 1h + 1h + 1h;
+-04/07/2022-
+theological-formation -> 45';
+udemy-course-react-zero-a-experto -> 1h;
+-05/07/2022-
+udemy-course-react-zero-a-experto -> 1h + 47' + 1h + 40'+ 1h + 1h;
+ZP -> 26';
+theological-formation -> 30';
+-06/07/2022-
+ZP -> 1h + 1h + 1h + 1h + 1h + 5';
+udemy-course-react-zero-a-experto -> 50';
+-07/07/2022-
+ZP -> 1h + 8';
+scan-papers -> 200';
+ZP-technical-prayer -> 5' + 5' + 5';
+task-work-4-uni-audio-python -> 1,5h + 1h;
+-08/07/2022-
+udemy-course-react-zero-a-experto -> 1h + 1h;
+-10/07/2022-
+udemy-course-react-zero-a-experto -> 1h + 22';
+-11/07/2022-
+theological-formation -> 2h + 0,5h;
+-15/07/2022-
+hobby-programming-project-modelK -> 4h;
+job-search -> 1h;
+scan-papers -> 6,5h;
+-16/07/2022-
+hobby-programming-project-modelK -> 6h + 2h + 1h;
+-17/07/2022-
+theological-formation -> 1,25h;
+job-search -> 1h + 40';
+-18/07/2022-
+hobby-programming-project-modelK -> 1h;
+job-search -> 45';
+-19/07/2022-
+job-search -> 2h;
+hobby-programming-project-modelK -> 1h;
+udemy-course-react-zero-a-experto -> 1h;
+-23/07/2022-
+learning-cloud-tecnologies-cloud9 -> 2h;
+-24/07/2022-
+Platzi -> 1h;
+-27/07/2022-
+blog-remix -> 1h;
+theological-formation -> 1h;
+physical-exercise-swimming-> 45';
+-28/07/2022-
+blog-remix -> 1,25h;
+-29/07/2022-
+theological-formation -> 1h;
+-04/08/2022-
+theological-formation -> 1h;
+software-design-patterns -> 1h;
+ZP -> 0,5h;
+-05/08/2022-
+ZP -> 1h + 26';
+business-patterns-book -> 2h;
+-06/08/2022-
+ZP -> 1h + 1h;
+-07/08/2022-
+ZP -> 45';
+scan-papers -> 2,5h;
+-08/08/2022-
+ZP -> 1h + 1h + 15';
+technical-prayer -> 15';
+-09/08/2022-
+technical-prayer -> 30';
+ZP -> 1,5h;
+-10/08/2022-
+ZP -> 1h + 1h + 13';
+selfTest -> 1,5h;
+-11/08/2022-
+ZP -> 1h + 0,75h;
+selfTest -> 3,5h;
+-12/08/2022-
+ZP -> 0,75h + 1h + 47';
+selfTest -> 1,25h + 3h + 20';
+-13/08/2022-
+daily-progress-app -> 1h + 1h + 1h + 1h + 1h + 1h + 38' + 30';
+-14/08/2022-
+daily-progress-app -> 30' + 1h + 50'+ 1h;
+pray-for-wife -> 10';
+singing-for-God -> 15';
+-16/08/2022-
+ZP -> 27';
+personal-planning -> 1h;
+daily-progress-app -> 2,5h;
+-17/08/2022-
+web-development-leonidas-course -> 1h
+learning-cards -> 1h + 15';
+daily-progress-app -> 2,25h;
+personal-planning -> 15';
