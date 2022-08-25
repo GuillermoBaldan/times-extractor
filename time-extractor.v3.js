@@ -2,7 +2,7 @@
 //open a txt file called example-singledataday using fs node library
 const fs = require("fs");
 const path = require("path");
-const filePath = path.join(__dirname, "dataExample.v3.txt");
+const filePath = path.join(__dirname, "dataExample.v4.txt");
 let file = fs.readFileSync(filePath, "utf8");
 
 //Load refs data into a constant
@@ -11,11 +11,50 @@ const refs = require("./refs.json");
 let array = [];
 //1º
 
+function validation(file){
+  let lines = [];
+  let length;
+  let counter = 0;
+  let datePattern = /-\d{2}\/\d{2}\/\d{4}-/g;
+  let inputDataPattern = /(([a-zíA-Z]+-?:?)+(\s|\n)*(->\s)*([0-9]+,?[0-9]*(h|');?\s?\+?\s?)*)+/g;
+  let wrongData =[];
+  let line;
+  let text = "";
+  
+  //1 ) Let´s separe the data into lines
+  lines = file.split("\n");
+    /* lines.forEach(line =>{
+      console.log(line)
+    }) */
+    //Let´s count the number of lines of our file;
+    length = lines.length;
+    console.log(`lines.length: ${length}`)
+    //2 ) Let´s check if data has the structure of date or of input data
+    for(let i = 0; i<length; i++){
+      line = lines[i]
+      text +=`line: ${i+1}, ${line}`;
+      // text += `${line.match(datePattern)}`
+      //text += `hola`
+      //console.log(`line ${i+1}; line: ${line}; line.match(datePattern): ${line.match(datePattern)}`)
+      if((lines[i].match(datePattern) === null) && (lines[i].match(inputDataPattern) === null)){
+         wrongData.push(i+1)
+      }
+    }
+    console.log(`wrongData.length: ${wrongData.length}`)
+    if (wrongData.length>0){
+      console.log(`There are syntax errors in the following lines ${JSON.stringify(wrongData)} `)
+    }
+    console.log(text)
+    log(text)
+    console.log("End of validation function")
+}
+
+
 function extractDays(file) {
   let aux = [];
   let blocks;
   //input: "-12/05/2022-\nZP -> 1h;\nscan-papers -> 15';" output: ["-12/05/2022-"];
-  pattern = /-\d{2}\/\d{2}\/\d{4}-/g;
+  let pattern = /-\d{2}\/\d{2}\/\d{4}-/g;
   aux = file.match(pattern);
   for (let i = 0; i < aux.length; i++) {
     aux[i] = aux[i].replace("-", "");
@@ -39,6 +78,7 @@ function createObject(file) {
   let blocks = [];
   let objectArray1 = [];
   let objectArray2 = [];
+  validation(file)
   dates = extractDays(file);
   blocks = extractBlocks(file);
   for (let i = 0; i < dates.length; i++) {
@@ -126,9 +166,14 @@ function extractTasks(string) {
   let pattern = /([a-zA-Z]+-?)+\s->/g;
   tasks = string.match(pattern);
   //Retiramos '->'
+ try {
   tasks = tasks.map((element) => {
     return element.replace(" ->", "");
   });
+} catch (error){
+  console.error(error)
+  console.log(JSON.stringify(tasks))
+}
 
   return tasks;
 }
@@ -259,9 +304,10 @@ function jsonGenerator(terms, times) {
 }
 
 async function main(){
-  console.log("Mostramos el objeto de datos")
+  //console.log("Mostramos el objeto de datos")
+  await validation(file);
   await console.log(createObject(file));
-  console.log("Ahora Mostramos el objeto general de datos que será transformoado en un JSON")
+  //console.log("Ahora Mostramos el objeto general de datos que será transformoado en un JSON")
   const object = await orderObject(file)
   console.log(JSON.stringify(object));
   save(object)
@@ -271,9 +317,14 @@ function save(object){
   fs.writeFileSync('./data.json', JSON.stringify(object, null, 2) , 'utf-8');
 }
 
+function log(text){
+  fs.writeFileSync('./log.txt', text , 'utf-8');
+}
+
 
 let config = require("./config/config.json");
 const { create } = require("domain");
+const { listenerCount } = require("process");
 config.iterationNumber++;
 console.log("---------------------------------------------------------");
 console.log(`Iteration number: ${config.iterationNumber}`);
